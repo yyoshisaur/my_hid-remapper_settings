@@ -1,0 +1,40 @@
+// -----------------------------------------------------
+// NOTE: THIS HEADER IS ALSO INCLUDED BY ASSEMBLER SO
+//       SHOULD ONLY CONSIST OF PREPROCESSOR DIRECTIVES
+// -----------------------------------------------------
+
+
+#ifndef _BOARDS_WAVESHARE_RP2040_ZERO_REMAPPER_H
+#define _BOARDS_WAVESHARE_RP2040_ZERO_REMAPPER_H
+
+#define WAVESHARE_RP2040_ZERO_REMAPPER
+
+#define SERIAL_TX_PIN 8
+#define SERIAL_RX_PIN 9
+#define SERIAL_CTS_PIN 10
+#define SERIAL_RTS_PIN 11
+
+#define GPIO_VALID_PINS_BASE 0b00000000000000000000000000000000
+
+// for hid remapper single
+#ifndef PICO_DEFAULT_PIO_USB_DP_PIN
+#define PICO_DEFAULT_PIO_USB_DP_PIN 0
+#endif
+
+// --- FLASH ---
+#define PICO_BOOT_STAGE2_CHOOSE_W25Q080 1
+
+#ifndef PICO_FLASH_SPI_CLKDIV
+#define PICO_FLASH_SPI_CLKDIV 2
+#endif
+
+#ifndef PICO_FLASH_SIZE_BYTES
+#define PICO_FLASH_SIZE_BYTES (2 * 1024 * 1024)
+#endif
+
+// All boards have B1 RP2040
+#ifndef PICO_RP2040_B0_SUPPORTED 
+#define PICO_RP2040_B0_SUPPORTED  0
+#endif
+
+#endif
